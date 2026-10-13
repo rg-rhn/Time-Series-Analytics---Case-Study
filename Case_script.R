@@ -790,7 +790,7 @@ LP_struct <- lp_lin(
 plot(LP_struct)
 
 #SHOCK PROXY: LP-IV
-mps <- read_csv("monetary-policy-surprises/mps.csv") 
+mps <- read_csv("data/mps.csv") 
 #make the FMOC event monthly 
 mps_monthly <- mps %>% group_by(month = floor_date(Date, "month")) %>% summarise(ME = sum(ME, na.rm = TRUE)) 
 #match the data time period, so we put 0 for all the month we do not have 
